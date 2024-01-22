@@ -24,7 +24,7 @@ def custom_parser(arg):
             retl = [i.strip(",") for i in lexer]
             retl.append(normal_brackets.group())
             return retl
-    elif brackets is None:
+    elif curly_brace is None:
             lexer = split(arg[:curly_brace.span()[0]])
             retl = [i.strip(",") for i in lexer]
             retl.append(curly_brace.group())
@@ -142,7 +142,7 @@ class MBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
                 elif len(argl) == 0:
                     objl.append(obj.__str__())
-                    print(objl)
+            print(objl)
 
     def do_count(self, arg):
         """Usage: count <class>
